@@ -1,3 +1,16 @@
 .redBackground {
     background: red !important;
 }
+
+.greenBackground {
+    background: green;
+}
+
+.darkgreenColor {
+    color: darkgreen
+}
+
+.isActive {
+    background: blue;
+    color: white
+}

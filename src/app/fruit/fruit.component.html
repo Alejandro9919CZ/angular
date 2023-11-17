@@ -36,7 +36,14 @@
 <p>Color: </p>
 <p>try red or blue</p>
 <input type="text" [(ngModel)]="selectedColor"/>
-<p [style.border]="selectedColor == 'red' ? '5px solid black' : ''" [class.redBackground]="selectedColor == 'blue'">{{selectedColor}}</p>
+<p [style.border]="selectedColor == 'red' ? '5px solid black' : ''"
+[ngClass]="{
+    redBackground: selectedColor == 'blue',
+    greenBackground: selectedColor == 'yellow',
+    darkgreenColor: 1 == 1
+}">{{selectedColor}}</p>
+<!-- [ngClass]="['darkgreenColor']" -->
+<!-- [class.redBackground]="selectedColor == 'blue'" -->
 <div [ngStyle]="{
     'background': selectedColor,
     'width': '100px',
@@ -45,5 +52,5 @@
     'margin-bottom': '10px'
 }"></div>
 <button (click)="logColor()">Log del color</button>
-<hr>
-<pet></pet>
+<!-- <hr>
+<pet></pet> -->

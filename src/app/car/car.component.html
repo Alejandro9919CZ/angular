@@ -1,0 +1,8 @@
+<p>write a param by url</p>
+<p *ngIf="param">Param: {{param}}</p>
+<div *ngIf="!param">
+    <p>There's no param</p>
+    <button (click)="redirect()">Go to car/2</button>
+</div>
+<br>
+<button (click)="redirectHome()">Go home</button>

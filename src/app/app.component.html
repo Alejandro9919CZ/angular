@@ -1,7 +1,15 @@
+<h1>{{title}}, {{title2}}</h1>
+<nav>
+    <div>
+        <a [routerLink]="['/home']" [routerLinkActive]="['isActive']">Home</a>
+        <a [routerLink]="['/pet']" [routerLinkActive]="['isActive']" [ngStyle]="{'margin-left': '5px'}">Pet</a>
+        <a [routerLink]="['/fruit']" [routerLinkActive]="['isActive']" [ngStyle]="{'margin-left': '5px'}">Fruit</a>
+        <a [routerLink]="['/car']" [routerLinkActive]="['isActive']" [ngStyle]="{'margin-left': '5px'}">Car</a>
+    </div>
+    
+</nav>
 <hr>
-<h1>Hola {{title}} {{title2}}</h1>
+<!-- <fruit></fruit>
 <hr>
-<fruit></fruit>
-<hr>
-<pet></pet>
+<pet></pet> -->
 <router-outlet></router-outlet>
