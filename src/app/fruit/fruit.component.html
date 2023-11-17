@@ -1,2 +1,49 @@
 <h2>{{title}}</h2>
 <p>Orange, Apple</p>
+<p>Nombre: {{fruit.name}}, Cantidad: {{fruit.quantity}}</p>
+<br>
+<div *ngIf="expired == false">
+    <p>Fruta fresca - Nombre [0]: {{fruits[0].name}}</p>
+    <button (click)="changeExpired(true)">Caducar fruta</button>
+</div>
+<div *ngIf="expired == true">
+    <p>Fruta caducada - Nombre [0]: {{fruits[0].name}}</p>
+    <button (click)="changeExpired(false)">Frescar fruta</button>
+</div>
+<br>
+<ul>
+    <li *ngFor="let fruit of fruits; let i = index"><strong>Fruta {{i+1}}</strong>
+        <ul>
+            <li>{{fruit.name}}</li>
+            <li>{{fruit.quantity}}</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<ul [ngSwitch]="color">
+    <p>change property color</p>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{
+        'background': color,
+        'color': 'white'
+    }">Color azul</li>
+    <li *ngSwitchCase="'red'" [ngStyle]="{
+        'background': color,
+        'color': 'white'
+    }">Color rojo</li>
+</ul>
+<br>
+<strong>Two way</strong>
+<p>Color: </p>
+<p>try red or blue</p>
+<input type="text" [(ngModel)]="selectedColor"/>
+<p [style.border]="selectedColor == 'red' ? '5px solid black' : ''" [class.redBackground]="selectedColor == 'blue'">{{selectedColor}}</p>
+<div [ngStyle]="{
+    'background': selectedColor,
+    'width': '100px',
+    'height': '100px',
+    'margin-top': '10px',
+    'margin-bottom': '10px'
+}"></div>
+<button (click)="logColor()">Log del color</button>
+<hr>
+<pet></pet>
