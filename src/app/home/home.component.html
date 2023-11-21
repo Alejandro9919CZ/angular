@@ -1,1 +1,11 @@
 <h1>{{title}}</h1>
+<br>
+<input type="text" [(ngModel)]="inputNewClothes"/>
+<button (click)="addNewClothes()">Add new clothes</button>
+<p *ngIf="inputNewClothes">The clothes to save is: <strong>{{inputNewClothes}}</strong></p>
+<br>
+<ul>
+    <li *ngFor="let clothes of clothesArray; let i = index">{{clothes}}s <button (click)="deleteClothes(i)">Delete</button>
+    </li>
+</ul>
+    
